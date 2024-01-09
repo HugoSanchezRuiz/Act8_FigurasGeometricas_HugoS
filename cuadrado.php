@@ -3,16 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <title>Calculadora de Figuras Geométricas</title>
+    <link rel="stylesheet" href="./styles/style.css">
+    <script src="./validacion2.js" defer></script>
 </head>
 <body>
     <h1>Calculadora de Figuras Geométricas</h1>
     <form action="calcular_resultado.php" method="post">
         <label for="lado1">Introduce el lado 1:</label>
-        <input type="number" name="lado1" required>
+        <input type="text" name="lado1" id="lado1">
+        <br>
+        <br>
+        <span id="errorLado1" style="color: red;"></span>
+        <br>
+        <br>
 
         <input type="hidden" name="tipoFigura" value="cuadrado">
         <input type="submit" value="Calcular">
     </form>
+
+    <a href="./index.php">Volver Inicio</a>
 </body>
 </html>
 
