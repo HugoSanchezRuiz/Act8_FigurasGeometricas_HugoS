@@ -1,3 +1,4 @@
+//Sweet alert cuando se crea un rectangulo
 document.addEventListener("DOMContentLoaded", function () {
 
     Swal.fire({

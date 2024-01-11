@@ -1,3 +1,5 @@
+
+//Sweet alert cuando se crea un cuadrado
 document.addEventListener("DOMContentLoaded", function () {
 
     Swal.fire({

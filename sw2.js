@@ -1,3 +1,5 @@
+
+//Sweet alert cuando se crea un triangulo
 document.addEventListener("DOMContentLoaded", function () {
 
     Swal.fire({

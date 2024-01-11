@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <title>Calculadora de Figuras Geométricas</title>
     <link rel="stylesheet" href="./styles/style.css">
-    <script src="./validacion1.js" defer></script>
+    <script src="./validacion1.js"></script>
 </head>
 <body>
     <h1>Calculadora de Figuras Geométricas</h1>
-    <form action="calcular_resultado.php" method="post">
+    <!-- Controlamos el evento de submit para validar el formulario de dos lados -->
+    <form action="calcular_resultado.php" method="post" onsubmit="return validarFormulario()">
         <label for="lado1">Introduce el lado 1:</label>
         <input type="text" name="lado1" id="lado1">
         <br>
@@ -25,7 +26,7 @@
         <br>
         <br>
 
-        <input type="hidden" name="tipoFigura" value="triangulo">
+        <input type="hidden" name="tipoFigura" id="triangulo" value="triangulo">
         <input type="submit" value="Calcular">
     </form>
 
@@ -36,9 +37,11 @@
 
 <?php
 
+//Llamaremos a las paginas necesarias para que herede la clase FiguraGeometrica e implemente PerimetroM
 require_once "figurageometrica.php";
 require_once "perimetro.php";
 
+//Creamos la clase Triangulo
 class Triangulo extends FiguraGeometrica implements PerimetroM {
     private $lado2;
 

@@ -5,13 +5,13 @@
     <meta charset="UTF-8">
     <title>Calculadora de Figuras Geométricas</title>
     <link rel="stylesheet" href="./styles/style.css">
-    <script src="./validacion2.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="./validacion2.js"></script>
 </head>
 
 <body>
     <h1>Calculadora de Figuras Geométricas</h1>
-    <form action="calcular_resultado.php" method="post">
+    <!-- Controlamos el evento de submit para validar el formulario de un lado -->
+    <form action="calcular_resultado.php" method="post" onsubmit="return validarFormulario()">
         <label for="lado1">Introduce el lado 1:</label>
         <input type="text" name="lado1" id="lado1">
         <br>
@@ -20,10 +20,9 @@
         <br>
         <br>
 
-        <input type="hidden" name="tipoFigura" value="circulo">
-        <input type="submit" value="Calcular" onclick="return mostrarSweetAlert()">
+        <input type="hidden" name="tipoFigura" id="circulo" value="circulo">
+        <input type="submit" value="Calcular">
     </form>
-
     <a href="./index.php">Volver Inicio</a>
 </body>
 
@@ -31,9 +30,11 @@
 
 <?php
 
+//Llamaremos a las paginas necesarias para que herede la clase FiguraGeometrica e implemente PerimetroM
 require_once "figurageometrica.php";
 require_once "perimetro.php";
 
+//Creamos la clase circulo
 class Circulo extends FiguraGeometrica implements PerimetroM
 {
     // Métodos propios de getters y setters
@@ -59,11 +60,9 @@ class Circulo extends FiguraGeometrica implements PerimetroM
         return 2 * M_PI * $this->getRadio();
     }
 
-    // Método toString
+    // Método toString para mostrar los datos
     public function __toString()
     {
         return "Circulo: Tipo={$this->getTipoFigura()}, Radio={$this->getLado1()}";
     }
 }
-
-

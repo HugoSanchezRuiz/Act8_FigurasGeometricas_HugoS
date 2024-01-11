@@ -1,3 +1,5 @@
+
+//Sweet alert cuando se crea un circulo
 document.addEventListener("DOMContentLoaded", function () {
 
     Swal.fire({

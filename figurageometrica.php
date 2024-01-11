@@ -1,5 +1,9 @@
 <?php
 
+//Creamos una clase de figura geometrica que se aplicará a las demás clases
+//Esta obligará a aplicar el metodo area() que se tendrá que usar en todas las clases a las que se extienda esta clase
+//Generamos los metodos contruct y destruct. También los setters y getters
+
 abstract class FiguraGeometrica {
     protected $tipoFigura;
     protected $lado1;
@@ -10,7 +14,7 @@ abstract class FiguraGeometrica {
     }
 
     public function __destruct() {
-        echo "Objeto {$this->tipoFigura} eliminado";
+        echo "Método destruct: Objeto {$this->tipoFigura} eliminado";
     }
 
     public function getTipoFigura() {
