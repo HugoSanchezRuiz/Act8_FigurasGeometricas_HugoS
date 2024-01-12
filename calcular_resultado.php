@@ -69,7 +69,6 @@
 
         echo "<p>Área: {$figura->area()}</p>";
         echo "<p>Perímetro: {$figura->perimetro()}</p>";
-        unset($figura);
         echo "<br>";
         echo "<br>";
         // Meteremos un botón para borrar la forma que se ha creado
