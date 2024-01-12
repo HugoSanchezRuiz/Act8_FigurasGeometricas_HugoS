@@ -11,7 +11,6 @@
             margin: 200px;
             align-items: center;
             justify-content: center;
-            height: 100vh;
         }
 
         h1 {
