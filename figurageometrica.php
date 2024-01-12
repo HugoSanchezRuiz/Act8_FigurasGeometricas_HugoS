@@ -14,7 +14,7 @@ abstract class FiguraGeometrica {
     }
 
     public function __destruct() {
-        echo "Método destruct: Objeto {$this->tipoFigura} eliminado";
+        return "Método destruct: Objeto {$this->tipoFigura} eliminado";
     }
 
     public function getTipoFigura() {
